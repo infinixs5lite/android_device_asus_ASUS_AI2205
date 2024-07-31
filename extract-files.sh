@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=ASUS_AI2205
+DEVICE=AI2205
 VENDOR=asus
 
 # Load extract_utils and do some sanity checks
