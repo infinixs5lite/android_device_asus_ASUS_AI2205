@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from ASUS_AI2205 device
-$(call inherit-product, device/asus/ASUS_AI2205/device.mk)
+$(call inherit-product, device/asus/AI2205/device.mk)
 
 PRODUCT_DEVICE := AI2205
 PRODUCT_NAME := twrp_AI2205
