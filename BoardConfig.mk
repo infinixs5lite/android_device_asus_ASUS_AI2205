@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/asus/ASUS_AI2205
+DEVICE_PATH := device/asus/AI2205
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -50,10 +50,7 @@ TARGET_KERNEL_CONFIG := ASUS_AI2205_defconfig
 TARGET_KERNEL_SOURCE := kernel/asus/ASUS_AI2205
 
 # Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-endif
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 104857600
@@ -75,9 +72,6 @@ TARGET_BOARD_PLATFORM := kalama
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2021-08-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
