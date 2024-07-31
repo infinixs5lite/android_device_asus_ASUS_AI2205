@@ -22,7 +22,7 @@ on:
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        default: 'device/tecno/AI2205'
+        default: 'device/asus/AI2205'
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
