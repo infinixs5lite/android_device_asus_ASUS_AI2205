@@ -1,2 +1,2 @@
 # making... 
-~ASUS_AI2205~
+_ASUS_AI2205_
