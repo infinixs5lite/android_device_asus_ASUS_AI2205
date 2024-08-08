@@ -82,6 +82,10 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
+# Modules for touch , battery etc
+# TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/prebuilt/modules)\")
+
 # Crypto
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
