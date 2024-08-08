@@ -48,6 +48,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_CONFIG := ASUS_AI2205_defconfig
 TARGET_KERNEL_SOURCE := kernel/asus/ASUS_AI2205
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 
 # Kernel - prebuilt
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
