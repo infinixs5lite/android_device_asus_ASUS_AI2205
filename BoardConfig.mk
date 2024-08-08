@@ -49,6 +49,10 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_CONFIG := ASUS_AI2205_defconfig
 TARGET_KERNEL_SOURCE := kernel/asus/ASUS_AI2205
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_PAGESIZE         := 4096
+TARGET_KERNEL_ARCH            := arm64
+TARGET_KERNEL_HEADER_ARCH     := arm64
+BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
 
 
 # Kernel - prebuilt
