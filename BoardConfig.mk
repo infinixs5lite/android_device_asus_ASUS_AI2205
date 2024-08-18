@@ -57,7 +57,7 @@ BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
 
 # Kernel - prebuilt
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-# TARGET_PREBUILT_DTB := $(PREBUILT_PATH)/dtb.img
+TARGET_PREBUILT_DTB := $(PREBUILT_PATH)/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(PREBUILT_PATH)/dtbo.img
 
 # Partitions
