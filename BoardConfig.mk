@@ -82,6 +82,23 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# System as root
+BOARD_ROOT_EXTRA_FOLDERS := \
+	cache \
+	carrier \
+	data_mirror \
+	efs \
+	linkerconfig \
+	odm_dlkm \
+	oem \
+	optics \
+	postinstall \
+	prism \
+	second_stage_resources \
+	spu \
+	system_ext \
+	vendor_dlkm
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
@@ -93,6 +110,8 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 # Modules for touch , battery etc
 # TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/prebuilt/modules)\")
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
@@ -101,7 +120,7 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_METADATA_PARTITION := true
 TW_USE_FSCRYPT_POLICY := 2
-PLATFORM_VERSION := 13
+# PLATFORM_VERSION := 13
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
@@ -141,7 +160,10 @@ TW_DEFAULT_LANGUAGE := zh_CN
 TW_DEFAULT_BRIGHTNESS := 200
 TW_EXCLUDE_APEX := true
 TW_HAS_EDL_MODE := true
+
 # Haptic
+TW_NO_HAPTICS := true
+
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
