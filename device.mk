@@ -32,6 +32,18 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hidl.allocator@1.0 \
+    android.hidl.memory@1.0 \
+    android.hidl.memory.token@1.0 \
+    libdmabufheap \
+    libhidlmemory \
+    libion \
+    libnetutils \
+    libxml2 \
+    vendor.display.config@1.0 \
+    vendor.display.config@2.0
+
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
 
