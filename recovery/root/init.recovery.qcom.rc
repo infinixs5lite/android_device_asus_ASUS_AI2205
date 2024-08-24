@@ -51,6 +51,8 @@ on fs
     chown system system /dev/ion
     install_keyring
 
+    export ANDROID_ROOT /system_root
+
 on boot
     setprop sys.usb.config adb
 
@@ -65,3 +67,14 @@ on property:twrp.modules.loaded=true
     start health-hal-2-1
     start vibratorfeature-hal-service
     umount /firmware
+
+on property:crypto.ready=1
+    start keymint-default
+    start keymaster-sb-4-0
+
+on property:crypto.ready=0
+    stop keymaster-sb-4-0
+    stop keymint-default
+
+on property:twrp.user.0.decrypt=0
+    umount /vendor/firmware_mnt
