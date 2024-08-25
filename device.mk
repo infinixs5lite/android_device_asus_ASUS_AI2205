@@ -6,6 +6,11 @@
 #
 
 LOCAL_PATH := device/asus/AI2205
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
