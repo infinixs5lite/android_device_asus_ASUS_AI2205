@@ -47,8 +47,9 @@ TARGET_NO_BOOTLOADER := true
 BOARD_BOOTIMG_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := kernel
-TARGET_KERNEL_CONFIG := ASUS_AI2205_defconfig
-TARGET_KERNEL_SOURCE := kernel/asus/ASUS_AI2205
+BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 printk.devkmsg=on firmware_class.path=/vendor/firmware_mnt/image bootconfig androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 loop.max_part=7 androidboot.selinux=permissive buildvariant=eng
+# TARGE_KERNEL_CONFIG := ASUS_AI2205_defconfig
+# TARGET_KERNEL_SOURCE := kernel/asus/ASUS_AI2205
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE         := 4096
 TARGET_KERNEL_ARCH            := arm64
@@ -60,6 +61,9 @@ BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(PREBUILT_PATH)/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(PREBUILT_PATH)/dtbo.img
+BOARD_INCLUDE_RECOVERY_DTBO := true
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 104857600
