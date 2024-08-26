@@ -61,5 +61,4 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/releasekey
+
